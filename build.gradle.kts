@@ -1,4 +1,3 @@
-import net.minecrell.pluginyml.bukkit.BukkitPlugin
 import net.minecrell.pluginyml.bukkit.BukkitPluginDescription
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
