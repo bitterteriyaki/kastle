@@ -5,19 +5,19 @@ plugins {
     kotlin("jvm") version "1.8.22"
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("net.minecrell.plugin-yml.bukkit") version "0.5.3"
-    id("xyz.jpenilla.run-paper") version "2.1.0"
 }
 
 group = property("group")!!
 version = property("version")!!
 
+// TODO: This should build for Paper instead of Bukkit.
 bukkit {
     name = "Kastle"
     main = "net.kastle.Main"
     description = "A Minecraft plugin for my SMP server."
     author = "kyomi <me@kyomi.dev>"
     website = "https://kyomi.dev"
-    apiVersion = "1.20"
+    apiVersion = "1.19"
     load = BukkitPluginDescription.PluginLoadOrder.STARTUP
     prefix = "kastle"
 }
@@ -48,10 +48,6 @@ tasks {
 
     build {
         dependsOn(shadowJar)
-    }
-
-    runServer {
-        minecraftVersion("1.20.1")
     }
 
     withType<KotlinCompile> {
