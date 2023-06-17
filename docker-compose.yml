@@ -18,7 +18,9 @@ services:
       - '25565:25565'
     volumes:
       - minecraft:/data
+      - .:/code
     stdin_open: true
+    tty: true
 
 volumes:
   minecraft:
