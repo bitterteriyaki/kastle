@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  minecraft:
+    image: 'kastle:dev'
+    platform: linux/amd64
+    build:
+      target: development_build
+      dockerfile: ./docker/Dockerfile
+      context: .
+      cache_from:
+        - 'kastle:dev'
+        - 'kastle:latest'
+    environment:
+      EULA: 'true'
+      TYPE: 'PAPER'
+    ports:
+      - '25565:25565'
+    volumes:
+      - minecraft:/data
+    stdin_open: true
+
+volumes:
+  minecraft:
