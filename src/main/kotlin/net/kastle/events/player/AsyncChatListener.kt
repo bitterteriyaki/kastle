@@ -14,10 +14,8 @@ class AsyncChatListener : Listener {
             val content = PlainTextComponentSerializer
                 .plainText()
                 .serialize(message)
-            Component.text()
-                .content("${source.name}: $content")
+            Component.text("${source.name}: $content")
                 .color(NamedTextColor.GRAY)
-                .build()
         }
     }
 }
